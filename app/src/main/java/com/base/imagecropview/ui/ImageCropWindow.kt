@@ -1,10 +1,13 @@
-package com.base.imagecropview
+package com.base.imagecropview.ui
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.Bundle
-import com.base.imagecropview.base.BaseFragment
-import com.base.imagecropview.base.EmptyViewModel
+import android.view.LayoutInflater
+import android.widget.PopupWindow
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.base.imagecropview.AppApplication
+import com.base.imagecropview.PictureCropHelper
 import com.base.imagecropview.data.ImageCropResult
 import com.base.imagecropview.data.TransparentResult
 import com.base.imagecropview.databinding.FragmentImageCropBinding
@@ -16,40 +19,42 @@ import java.util.*
  * @author jiangshiyu
  * @date 2022/6/8
  */
-class ImageCropFragment(val imageCropResult: ImageCropResult) :
-    BaseFragment<FragmentImageCropBinding, EmptyViewModel>() {
+class ImageCropWindow(
+    context: Context,
+    imageCropResult: ImageCropResult
+) : PopupWindow() {
 
-    companion object {
-        val CROP_DIR = File(AppApplication.getApplication()!!.filesDir, "crop_temp")
-    }
+    val CROP_DIR = File(AppApplication.getApplication()!!.filesDir, "crop_temp")
 
+
+    private var mCropBinding: FragmentImageCropBinding? = null
     private var mOriginBitmap: Bitmap? = null
-
     var mCallBack: CropCallBack? = null
 
-    override fun onBundle(bundle: Bundle) {
+    init {
+        width = ConstraintLayout.LayoutParams.MATCH_PARENT
+        height = ConstraintLayout.LayoutParams.MATCH_PARENT
+        isFocusable = true
+        mCropBinding = FragmentImageCropBinding.inflate(LayoutInflater.from(context))
+        contentView = mCropBinding?.root
 
-    }
-
-    override fun init(savedInstanceState: Bundle?) {
-        binding?.cropView?.let {
+        mCropBinding?.cropView?.let {
             mOriginBitmap = BitmapFactory.decodeFile(imageCropResult.origin)
             PictureCropHelper.startCrop(
-                requireContext(),
+                context,
                 mOriginBitmap!!,
                 imageCropResult.cropResult.rect,
                 null,
                 it
             )
         }
+        mCropBinding?.btnCrop?.setOnClickListener {
 
-        binding?.btnCrop?.setOnClickListener {
-
-            val cropView = binding?.cropView
+            val cropView = mCropBinding?.cropView
             val cropResult = cropView?.let { crop -> PictureCropHelper.getCropResult(crop) }
 
             if (cropResult == null) {
-                mCallBack?.cropFail()
+                mCallBack?.cropFail(this)
             } else {
                 val originCompress =
                     File(CROP_DIR, "${UUID.randomUUID()}.png")
@@ -65,27 +70,25 @@ class ImageCropFragment(val imageCropResult: ImageCropResult) :
                     TransparentResult(originCompress.absolutePath, cropResult.rectInSource)
 
                 val afterCrop = imageCropResult.copy(cropResult = cropInSource)
-                mCallBack?.cropSuc(afterCrop)
+                mCallBack?.cropSuc(afterCrop, this)
             }
 
         }
-
-
     }
 
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun dismiss() {
+        super.dismiss()
+        mCropBinding = null
         if (mOriginBitmap != null && mOriginBitmap?.isRecycled == true) {
             mOriginBitmap?.recycle()
         }
     }
 
-
     interface CropCallBack {
 
-        fun cropSuc(cropResult: ImageCropResult)
+        fun cropSuc(cropResult: ImageCropResult, popupWindow: PopupWindow)
 
-        fun cropFail()
+        fun cropFail(popupWindow: PopupWindow)
     }
 }
