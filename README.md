@@ -1,7 +1,7 @@
 # ImageCropView
 自定义裁剪view，初始化裁剪区域，支持保留上次裁剪在原图上的区域记录
 
-### 自定义view详情可查看**ImageCropView** 和 **MosaicView**
+### 自定义view(**ImageCropView**,**MosaicView**)
 - 可自由调整裁剪框样式，宽高比
 - 支持保留上次裁剪选区，第一次默认裁剪框选取整张图
 
