@@ -10,6 +10,20 @@ import kotlinx.parcelize.Parcelize
  * 裁剪区域
  */
 @Parcelize
+data class ImageCropResult(
+    /**
+     * 原图路径
+     */
+    val origin: String,
+
+    /**
+     * 区域裁剪图
+     */
+    val cropResult: TransparentResult,
+) : Parcelable
+
+
+@Parcelize
 data class TransparentResult(
     /**
      * 裁剪后bitmap路径

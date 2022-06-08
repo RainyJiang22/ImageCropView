@@ -23,6 +23,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -43,4 +49,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.blankj:utilcodex:1.31.0'
+
+    implementation('io.reactivex.rxjava2:rxandroid:2.1.0')
+    implementation('io.reactivex.rxjava2:rxjava:2.2.2')
+    implementation('com.github.nekocode.rxlifecycle:rxlifecycle:2.0')
+    implementation('com.github.nekocode.rxlifecycle:rxlifecycle-compact:2.0') // Optional
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-process:2.4.0")
 }

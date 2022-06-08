@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <com.base.imagecropview.widget.MosaicView
         android:id="@+id/mosaic_view"
@@ -42,6 +43,16 @@
         app:min_frame_size="50dp"
         app:overlay_color="@color/crop_mask_color"
         app:touch_padding="8dp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_crop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="裁剪"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/crop_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
