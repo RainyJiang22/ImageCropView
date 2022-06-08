@@ -15,6 +15,9 @@ import com.base.imagecropview.widget.ImageCropView
 object PictureCropHelper {
 
 
+    /**
+     * 开始裁剪
+     */
     fun startCrop(
         context: Context,
         currentBitmap: Bitmap,
