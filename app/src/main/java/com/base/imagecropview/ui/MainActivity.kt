@@ -26,12 +26,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     @SuppressLint("CheckResult")
     override fun init(savedInstanceState: Bundle?) {
 
-        val sourceBitmap = ImageUtils.getBitmap(R.drawable.picture)
+        val sourceBitmap = ImageUtils.getBitmap(R.drawable.bg_shape_edit_transparent)
         binding?.ivResult?.setImageBitmap(sourceBitmap)
 
         binding?.tvStartCrop?.setOnClickListener {
 
-            viewModel.getCropResult(R.drawable.picture)
+            viewModel.getCropResult(R.drawable.bg_shape_edit_transparent)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
