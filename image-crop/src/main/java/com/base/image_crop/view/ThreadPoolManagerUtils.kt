@@ -1,6 +1,5 @@
-package com.base.imagecropview.utils
+package com.base.image_crop.view
 
-import com.base.imagecropview.utils.ThreadPoolManagerUtils
 import java.util.concurrent.Executors
 import java.util.concurrent.SynchronousQueue
 import java.util.concurrent.ThreadPoolExecutor

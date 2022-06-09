@@ -1,4 +1,4 @@
-package com.base.imagecropview
+package com.base.imagecropview.ui
 
 import android.annotation.SuppressLint
 import android.graphics.Rect
@@ -6,13 +6,12 @@ import android.os.Bundle
 import android.view.Gravity
 import android.widget.PopupWindow
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.distinctUntilChanged
+import com.base.imagecropview.R
 import com.base.imagecropview.base.BaseActivity
 import com.base.imagecropview.data.ImageCropResult
 import com.base.imagecropview.data.TransparentResult
 import com.base.imagecropview.databinding.ActivityMainBinding
-import com.base.imagecropview.ui.ImageCropWindow
 import com.blankj.utilcode.util.ImageUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

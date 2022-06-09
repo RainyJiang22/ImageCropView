@@ -1,4 +1,4 @@
-package com.base.imagecropview.widget
+package com.base.image_crop.view
 
 import android.content.Context
 import android.util.AttributeSet

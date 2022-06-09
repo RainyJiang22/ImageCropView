@@ -1,4 +1,4 @@
-package com.base.imagecropview.widget
+package com.base.image_crop.view
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
@@ -13,9 +13,8 @@ import android.view.MotionEvent
 import android.view.animation.DecelerateInterpolator
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatImageView
-import com.base.imagecropview.R
-import com.base.imagecropview.data.ImageCropData
-import com.base.imagecropview.utils.ThreadPoolManagerUtils
+import com.base.image_crop.R
+import com.base.image_crop.bean.ImageCropData
 import com.blankj.utilcode.util.SizeUtils
 import java.lang.Exception
 import kotlin.math.roundToInt

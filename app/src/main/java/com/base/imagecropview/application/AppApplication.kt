@@ -1,4 +1,4 @@
-package com.base.imagecropview
+package com.base.imagecropview.application
 
 import android.annotation.SuppressLint
 import android.app.Application

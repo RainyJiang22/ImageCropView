@@ -1,4 +1,4 @@
-package com.base.imagecropview.data
+package com.base.image_crop.bean
 
 import android.graphics.Bitmap
 import android.graphics.Rect

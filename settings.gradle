@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ImageCropView"
 include ':app'
+include ':image-crop'

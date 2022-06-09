@@ -1,4 +1,4 @@
-package com.base.imagecropview.widget
+package com.base.image_crop.view
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -9,7 +9,7 @@ import android.graphics.Paint
 import android.graphics.PixelFormat
 import android.graphics.Shader
 import android.graphics.drawable.Drawable
-import com.base.imagecropview.R
+import com.base.image_crop.R
 
 /**
  * @author jiangshiyu

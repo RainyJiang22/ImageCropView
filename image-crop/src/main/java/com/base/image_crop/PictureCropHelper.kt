@@ -1,12 +1,12 @@
-package com.base.imagecropview
+package com.base.image_crop
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import androidx.annotation.ColorInt
-import com.base.imagecropview.data.ImageCropData
-import com.base.imagecropview.widget.ImageCropView
+import com.base.image_crop.bean.ImageCropData
+import com.base.image_crop.view.ImageCropView
 
 /**
  * @author jiangshiyu

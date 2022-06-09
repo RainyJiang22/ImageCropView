@@ -6,8 +6,8 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.widget.PopupWindow
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.base.imagecropview.AppApplication
-import com.base.imagecropview.PictureCropHelper
+import com.base.image_crop.PictureCropHelper
+import com.base.imagecropview.application.AppApplication
 import com.base.imagecropview.data.ImageCropResult
 import com.base.imagecropview.data.TransparentResult
 import com.base.imagecropview.databinding.FragmentImageCropBinding

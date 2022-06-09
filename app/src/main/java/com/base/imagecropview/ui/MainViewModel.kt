@@ -1,10 +1,11 @@
-package com.base.imagecropview
+package com.base.imagecropview.ui
 
 import android.app.Application
 import android.graphics.Bitmap
 import androidx.annotation.DrawableRes
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.base.imagecropview.application.AppApplication
 import com.base.imagecropview.data.ImageCropResult
 import com.blankj.utilcode.util.ImageUtils
 import io.reactivex.Observable

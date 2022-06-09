@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
-    <com.base.imagecropview.widget.MosaicView
+    <com.base.image_crop.view.MosaicView
         android:id="@+id/mosaic_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.base.imagecropview.widget.ImageCropView
+    <com.base.image_crop.view.ImageCropView
         android:id="@+id/crop_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
