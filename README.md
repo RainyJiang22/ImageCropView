@@ -30,6 +30,38 @@ dependencies {
 
 ### 使用方法
 
+- 布局中添加`ImageCropView`
+```xml
+ <com.base.image_crop.view.ImageCropView
+        android:id="@+id/crop_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        app:background_color="@color/crop_background_color"
+        app:crop_enabled="true"
+        app:crop_mode="free"
+        app:frame_color="@color/crop_border_color"
+        app:frame_stroke_weight="1dp"
+        app:guide_color="@color/crop_border_color"
+        app:guide_show_mode="show_always"
+        app:guide_stroke_weight="1dp"
+        app:handle_color="@color/crop_border_color"
+        app:handle_show_mode="show_always"
+        app:handle_size="24dp"
+        app:handle_width="6dp"
+        app:initial_frame_scale="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H , 1 : 1 "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:min_frame_size="50dp"
+        app:overlay_color="@color/crop_mask_color"
+        app:touch_padding="8dp" />
+```
+
 - 调用PictureCropHelper.startCrop方法进行裁剪
 
 ```kotlin
